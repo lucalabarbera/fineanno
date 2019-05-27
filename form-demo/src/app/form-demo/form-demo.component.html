@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h2>Demo Form: Sku</h2>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="jumbotron">
+
+    <label for="skuInput">SKU</label>
+    <input type="text" id="skuInput" name="sku" [formControl]="myForm.controls['sku']" class="form-control">
+    <div *ngIf="!myForm.controls['sku'].valid" class="alert alert-danger">SKU is invalid</div>
+    <div *ngIf="myForm.controls['sku'].hasError('required')" class="alert alert-danger">SKU is required</div>
+
+    <label for="compleanno">Compleanno</label>
+    <input type="date" id="compleanno" name="compleanno" [formControl]="myForm.controls['compleanno']" class="form-control">
+    <div *ngIf="!myForm.controls['compleanno'].valid" class="alert alert-danger">Compleanno is invalid</div>
+    <div *ngIf="myForm.controls['compleanno'].hasError('required')" class="alert alert-danger">Compleanno is required</div>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [formControl]="myForm.controls['password']" class="form-control">
+    <div *ngIf="!myForm.controls['password'].valid" class="alert alert-danger">Password is invalid</div>
+    <div *ngIf="myForm.controls['password'].hasError('required')" class="alert alert-danger">Password is required</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+  <div *ngIf="!myForm.valid" class="alert alert-danger">Form is invalid</div>
+
+</div>

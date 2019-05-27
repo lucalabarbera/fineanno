@@ -1,0 +1,81 @@
+<div class="container-grid" id="container-grid">
+
+  <div>
+    <div [hidden]="hide">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
+        <h2>REGISTRATI</h2>
+        <div class="form-row m-2">
+            <div class="col">
+                Nome
+                <input type="text" class="form-control" onfocus="this.value=''" name="nome" [formControl]="myForm.controls['nome']">
+                <div *ngIf="myForm.controls['nome'].hasError('required')" class="text-danger mt-1">Il nome è richiesto</div>
+            </div>
+            <div class="col">
+                Cognome
+                <input type="text" class="form-control" onfocus="this.value=''" name="cognome" [formControl]="myForm.controls['cognome']">
+                <div *ngIf="myForm.controls['cognome'].hasError('required')" class="text-danger mt-1">Il cognome è richiesto</div>
+            </div>
+        </div>
+
+        <div class="m-3">
+          Username
+          <input type="text" class="form-control" onfocus="this.value=''" name="username" [formControl]="myForm.controls['username']">
+          <div *ngIf="myForm.controls['username'].hasError('required')" class="text-danger mt-1">L'username è richiesto</div>
+        </div>
+
+        <div class="m-3">
+          Password
+          <input type="password" class="form-control" onfocus="this.value=''" name="password" [formControl]="myForm.controls['password']">
+          <div *ngIf="myForm.controls['password'].hasError('required')" class="text-danger mt-1">La password è richiesta</div>
+        </div>
+
+        <div class="m-3">
+          Email
+          <input type="email" class="form-control" onfocus="this.value=''" name="email" [formControl]="myForm.controls['email']">
+          <div *ngIf="myForm.controls['email'].hasError('required')" class="text-danger mt-1">L'email è richiesta</div>
+        </div>
+
+        <div class="m-3">
+          Telefono
+          <input type="tel" class="form-control" onfocus="this.value=''" pattern="[0-9]{10}" name="telefono" [formControl]="myForm.controls['telefono']">
+          <div *ngIf="myForm.controls['telefono'].hasError('required')" class="text-danger mt-1">Il telefono è richiesto</div>
+        </div>
+
+        <div *ngIf="!myForm.valid" class="text-danger m-3"><h4>Il form non è valido</h4></div>
+        <button class="m-3 btn btn-primary btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
+      </form>
+    </div>
+
+    <div [hidden]="!hide" class="p-5 mb-2">
+      <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm.value)" class="p-5">
+        <h2>LOGIN</h2>
+        <div class="form-row m-2">
+            <div class="col">
+                Username
+                <input type="text" class="form-control" onfocus="this.value=''" name="username" [formControl]="LoginForm.controls['username']">
+                <div *ngIf="LoginForm.controls['username'].hasError('required')" class="text-danger mt-1">L'username è richiesto</div>
+            </div>
+            <div class="col">
+                Password
+                <input type="password" class="form-control" onfocus="this.value=''" name="password" [formControl]="LoginForm.controls['password']">
+                <div *ngIf="LoginForm.controls['password'].hasError('required')" class="text-danger mt-1">La password è richiesta</div>
+            </div>
+        </div>
+        <h4 id="loginEffettuato" class="text-center mt-3">LOGIN EFFETTUATO</h4>
+        <button class="m-3 btn btn-primary btn-block btn-md w-25 float-right" type="submit" [disabled]="!LoginForm.valid">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div>
+      <button class="float-right btn btn-primary m-2" id="btnLogin" (click)="toggleVar()">Login</button>
+      <ul class="mt-5 list-group">
+        <h2>Utenti</h2>
+        <li *ngFor="let a of utenti" class="list-group-item list-group-item-primary m-1 utenti">{{ a.nome }} {{a.cognome}}</li>
+      </ul>
+  </div>
+</div>
+<app-post [nomeUtenteOnline]="nomeUtenteOnline" [cognomeUtenteOnline]="cognomeUtenteOnline" [username]="username"></app-post>
+
+
+<router-outlet></router-outlet>
