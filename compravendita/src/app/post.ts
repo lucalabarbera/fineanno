@@ -1,3 +1,5 @@
+import { Comment } from './comment';
+
 export class Post
 {
   nome: string;
@@ -7,4 +9,6 @@ export class Post
   nomeUtente: string;
   cognomeUtente: string;
   username: string;
+  data: string;
+  commenti: Comment[];
 }

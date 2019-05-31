@@ -7,6 +7,20 @@
     <h6>tipo: {{post.tipo}}</h6>
     <h6>descrizione: {{post.descrizione}}</h6>
     <h6 class="float-right text-secondary">{{post.username}} ({{post.nomeUtente}} {{post.cognomeUtente}})</h6>
+    <br>
+    <br>
+    <h6 class="text-secondary float-right"><small><b>{{post.data}}</b></small></h6>
+    <br>
+    <br>
+    <div>
+      <input type="text" class="form-control" onfocus="this.value=''" placeholder="Aggiungi commento qui..." #commento>
+      <button class="btn btn-sm btn-dark" id="btnCommenta" (click)="commenta(commento, post)">Commenta</button>
+    </div>
+    <br>
+    <div *ngFor="let commento of post.commenti" class=" rounded p-2 mb-4" id="commento">
+      <h6 class="d-inline-block"><b>{{commento.username}} ({{commento.nomeUtente}} {{commento.cognomeUtente}})</b></h6><p class="d-inline-block float-right"><small><b>{{commento.data}}</b></small></p>
+      <p style="font-size:14px" class="ml-4">{{commento.testo}}</p>
+    </div>
   </div>
 </div>
 <form id="aggiuntaOggetto" [formGroup]="oggettoForm" (ngSubmit)="aggiungiOggetto(oggettoForm.value)" class="p-5">

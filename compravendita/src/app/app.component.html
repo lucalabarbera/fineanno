@@ -69,13 +69,18 @@
 
   <div>
       <button class="float-right btn btn-primary m-2" id="btnLogin" (click)="toggleVar()">Login</button>
-      <ul class="mt-5 list-group">
-        <h2>Utenti</h2>
-        <li *ngFor="let a of utenti" class="list-group-item list-group-item-primary m-1 utenti">{{ a.nome }} {{a.cognome}}</li>
-      </ul>
+      <button class="float-right btn btn-primary m-2" id="btnListaUtenti" (click)="toggleListaUtenti()">Nascondi lista utenti</button>
+      <div *ngIf="!listaUtenti">
+        <ul class="mt-5 list-group">
+          <h2>Utenti</h2>
+          <li *ngFor="let a of utenti" class="list-group-item list-group-item-primary m-1 utenti">{{ a.nome }} {{a.cognome}}</li>
+        </ul>
+      </div>
   </div>
 </div>
 <app-post [nomeUtenteOnline]="nomeUtenteOnline" [cognomeUtenteOnline]="cognomeUtenteOnline" [username]="username"></app-post>
-
+<br>
+<h4 *ngIf="logoutEffettuato" class="text-center m-1">LOGOUT EFFETTUATO</h4>
+<h1 class="text-danger text-center mt-5" (click)="logout()">LOGOUT</h1>
 
 <router-outlet></router-outlet>

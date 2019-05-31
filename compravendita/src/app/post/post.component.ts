@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Post } from "../post";
 import { Posts } from '../mock-posts';
+import { Comment } from '../comment';
 
 @Component({
   selector: 'app-post',
@@ -35,6 +36,9 @@ export class PostComponent implements OnInit {
         post.nomeUtente = this.nomeUtenteOnline;
         post.cognomeUtente = this.cognomeUtenteOnline;
         post.username = this.username;
+        let date: Date = new Date();
+        post.data = date.getHours() + ':' + date.getMinutes() + ', il ' + date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
+        post.commenti = [];
         this.posts.push(post);
         document.getElementById("loginPerOggetti").style.display = "none";
       } else {
@@ -45,6 +49,25 @@ export class PostComponent implements OnInit {
     }
 
     return false;
+  }
+
+  commenta(commento: HTMLInputElement, post: Post){
+    if(this.username != null){
+      if(commento.value != ''){
+        let comment = new Comment();
+        comment.testo = commento.value;
+        comment.nomeUtente = this.nomeUtenteOnline;
+        comment.cognomeUtente = this.cognomeUtenteOnline;
+        comment.username = this.username;
+        let date: Date = new Date();
+        comment.data = date.getHours() + ':' + date.getMinutes() + ', il ' + date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
+        post.commenti.push(comment);
+      } else {
+        console.log('Il commento non può essere vuoto');
+      }
+    } else {
+      console.log("Devi prima effettuare il login");
+    }
   }
 
 }

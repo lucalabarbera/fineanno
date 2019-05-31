@@ -15,3 +15,12 @@
 #post {
   background-color: rgba(40, 168, 70, 0.4);
 }
+
+#commento {
+  background-color: rgba(128, 128, 128, 0.4);
+  border: 1px rgba(0, 0, 0, 0.4) solid;
+}
+
+#btnCommenta {
+  margin: 10px 0;
+}
