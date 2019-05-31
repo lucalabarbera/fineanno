@@ -1,27 +1,27 @@
 import { Post } from './post';
 
 export const Posts: Post[] = [
-  { nome:'Maglietta',
-    tipo:'abbigliamento',
-    prezzo:5,
-    descrizione:'Maglietta rossa con logo bianco',
-    nomeUtente:'Sara',
-    cognomeUtente:'Villa',
-    username:'sara.villa',
-    data:'13:25, il 23/04/2019',
+  { nome:'DUCATI SUPERSPORT',
+    tipo:'sportiva',
+    prezzo:7500,
+    descrizione:'Ducati supersport 5.000 km ',
+    nomeUtente:'Luca',
+    cognomeUtente:'Laba',
+    username:'luca.laba',
+    data:'18:18, il 18/02/2018',
     commenti:[
       {
-        testo:'Ha ancora l\'etichetta?',
+        testo:'Ha lo scarico originale?',
         cognomeUtente: 'Novembre',
-        nomeUtente:'Mario',
-        username:'marion',
-        data: '21:50, il 24/04/2019'
+        nomeUtente:'Valerossi',
+        username:'VR',
+        data: '23:15, il 24/02/2018'
       },
       {
         testo:'No :(',
-        cognomeUtente: 'Villa',
-        nomeUtente:'Sara',
-        username:'sara.villa',
+        cognomeUtente: 'Laba',
+        nomeUtente:'LucaLaba',
+        username:'luca.laba',
         data: '21:54, il 24/04/2019'
       }]
   },
@@ -39,28 +39,6 @@ export const Posts: Post[] = [
         nomeUtente:'Mario',
         username:'marion',
         data: '15:07, il 29/04/2019'
-      }]
-  },
-  { nome:'Tavolo',
-    tipo:'arredamento',
-    prezzo:55,
-    descrizione:'Tavolo in legno di quercia',
-    nomeUtente:'Mario',
-    cognomeUtente:'Novembre',
-    username:'marion',
-    data:'01:25, il 05/05/2019',
-    commenti:[
-      { testo:'Lo compro io',
-        cognomeUtente: 'Paglia',
-        nomeUtente:'Camilla',
-        username:'cpaglia',
-        data: '08:06, il 06/05/2019'
-      },
-      { testo:'No lo voglio io',
-        cognomeUtente: 'Villa',
-        nomeUtente:'Sara',
-        username:'sara.villa',
-        data: '08:10, il 06/05/2019'
       }]
   }
 ];

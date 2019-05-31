@@ -21,7 +21,7 @@ export class AppComponent {
   logoutEffettuato: boolean = false;
 
   constructor(fb: FormBuilder) {
-    this.myForm = fb.group({'nome': ['Nome', Validators.required], 'cognome': ['Cognome', Validators.required], 'username': ['username', Validators.required], 'password': ['12345678', Validators.required], 'email': ['example@email.com', Validators.compose([Validators.required, Validators.email])], 'telefono': ['3333333333', Validators.required]});
+    this.myForm = fb.group({'nome': ['Nome', Validators.required], 'cognome': ['Cognome', Validators.required], 'username': ['username', Validators.required], 'password': ['12345678', Validators.required], 'email': ['example@email.com', Validators.compose([Validators.required, Validators.email])]});
     this.LoginForm = fb.group({'username': ['username', Validators.required], 'password': ['12345678', Validators.required]});
   }
 
@@ -55,7 +55,6 @@ export class AppComponent {
         utente.username = this.myForm.controls['username'].value;
         utente.password = this.myForm.controls['password'].value;
         utente.email = this.myForm.controls['email'].value;
-        utente.telefono = Number(this.myForm.controls['telefono'].value);
         this.utenti.push(utente);
         this.logoutEffettuato = false
       } else {

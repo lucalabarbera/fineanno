@@ -1,9 +1,11 @@
 <div class="container-grid" id="container-grid">
-
+<h1 class="text-danger text-center mt-5" (click)="logout()">COMPROVENDOPRESTO MOTO.mt </h1>
+<br>
+<br>
   <div>
     <div [hidden]="hide">
       <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
-        <h2>REGISTRATI</h2>
+        <h2>AGGIUNGI MOTOCICLISTA</h2>
         <div class="form-row m-2">
             <div class="col">
                 Nome
@@ -34,13 +36,6 @@
           <input type="email" class="form-control" onfocus="this.value=''" name="email" [formControl]="myForm.controls['email']">
           <div *ngIf="myForm.controls['email'].hasError('required')" class="text-danger mt-1">L'email è richiesta</div>
         </div>
-
-        <div class="m-3">
-          Telefono
-          <input type="tel" class="form-control" onfocus="this.value=''" pattern="[0-9]{10}" name="telefono" [formControl]="myForm.controls['telefono']">
-          <div *ngIf="myForm.controls['telefono'].hasError('required')" class="text-danger mt-1">Il telefono è richiesto</div>
-        </div>
-
         <div *ngIf="!myForm.valid" class="text-danger m-3"><h4>Il form non è valido</h4></div>
         <button class="m-3 btn btn-primary btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
       </form>
@@ -67,9 +62,20 @@
     </div>
   </div>
 
-  <div>
-      <button class="float-right btn btn-primary m-2" id="btnLogin" (click)="toggleVar()">Login</button>
-      <button class="float-right btn btn-primary m-2" id="btnListaUtenti" (click)="toggleListaUtenti()">Nascondi lista utenti</button>
+
+
+</div>
+<app-post [nomeUtenteOnline]="nomeUtenteOnline" [cognomeUtenteOnline]="cognomeUtenteOnline" [username]="username"></app-post>
+<br>
+<h4 *ngIf="logoutEffettuato" class="text-center m-1">LOGOUT EFFETTUATO</h4>
+<h1 class="text-danger text-center mt-5" (click)="logout()">LOGOUT</h1>
+
+
+
+//  <div>
+
+    <button class="float-right btn btn-primary m-2" id="btnLogin" (click)="toggleVar()">Login</button>
+     <button class="float-right btn btn-primary m-2" id="btnListaUtenti" (click)="toggleListaUtenti()">Nascondi lista utenti</button>
       <div *ngIf="!listaUtenti">
         <ul class="mt-5 list-group">
           <h2>Utenti</h2>
@@ -77,10 +83,3 @@
         </ul>
       </div>
   </div>
-</div>
-<app-post [nomeUtenteOnline]="nomeUtenteOnline" [cognomeUtenteOnline]="cognomeUtenteOnline" [username]="username"></app-post>
-<br>
-<h4 *ngIf="logoutEffettuato" class="text-center m-1">LOGOUT EFFETTUATO</h4>
-<h1 class="text-danger text-center mt-5" (click)="logout()">LOGOUT</h1>
-
-<router-outlet></router-outlet>

@@ -1,9 +1,9 @@
 .ng-valid:not(form) {
-  border: 2px solid #42A948;
+  border: 2px solid rgb(152, 66, 169);
 }
 
 .ng-invalid:not(form)  {
-  border: 2px solid #a94442;
+  border: 2px solid #a9a742;
 }
 
 .container-post {
@@ -13,7 +13,7 @@
 }
 
 #post {
-  background-color: rgba(40, 168, 70, 0.4);
+  background-color: rgba(11, 62, 228, 0.904);
 }
 
 #commento {
