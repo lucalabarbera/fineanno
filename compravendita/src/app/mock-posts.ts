@@ -18,27 +18,27 @@ export const Posts: Post[] = [
         data: '23:15, il 24/02/2018'
       },
       {
-        testo:'No :(',
+        testo:'No monta un akrapovic',
         cognomeUtente: 'Laba',
         nomeUtente:'LucaLaba',
         username:'luca.laba',
         data: '21:54, il 24/04/2019'
       }]
   },
-  { nome:'Bicicletta X40',
+  { nome:'suzyky rs450',
     tipo:'veicolo',
-    prezzo:125,
-    descrizione:'Bicicletta Vintage',
-    nomeUtente:'Camilla',
-    cognomeUtente:'Paglia',
-    username:'cpaglia',
-    data:'21:37, il 27/04/2019',
+    prezzo:12500,
+    descrizione:'mai usata vendo per infortunio',
+    nomeUtente:'marc',
+    cognomeUtente:'marquez',
+    username:'m93',
+    data:'08:30 , il 25/05/2010',
     commenti:[
-      { testo:'La prendo solo se è stata usata meno di 24 giorni e 22 ore',
-        cognomeUtente: 'Novembre',
-        nomeUtente:'Mario',
-        username:'marion',
-        data: '15:07, il 29/04/2019'
+      { testo:'gia venduta?',
+        cognomeUtente: 'Jorge',
+        nomeUtente:'lorenzo',
+        username:'Jlorenzo',
+        data: '18:18, il 27/05/2012'
       }]
   }
 ];
